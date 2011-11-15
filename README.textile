@@ -25,6 +25,11 @@ Plugin patches *views\queries\_filters.rhtml* view. Additions are marked with _V
 
 h3. History
 
+x.x.x
+
+* Added german language contributed by Christian Mayr (http://www.redmine.org/boards/3/topics/21015?r=26470#message-26470)
+* Added redmine_extra_query_operators.zip (14,2 KB) by Davor Zelic, includes fix for redmine 1.2 and hr language
+
 0.0.4
 
 * Compatibility with Redmine 1.2.x
