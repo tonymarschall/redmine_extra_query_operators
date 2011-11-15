@@ -1,0 +1,10 @@
+hr:
+# query selectors strings
+  label_eqo_before_date: "prije"
+  label_eqo_after_date: "poslije"
+  label_eqo_between_date: "između"
+  label_eqo_regexp: "odgovara regularnom izrazu"
+  label_eqo_mw_tip: "prije/poslije trenutnog"
+  label_eqo_month_offset: "je mjeseci"
+  label_eqo_week_offset: "je tjedana"
+

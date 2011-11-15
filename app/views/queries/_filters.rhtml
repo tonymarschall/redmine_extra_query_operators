@@ -89,13 +89,14 @@ function toggle_operator(field) {
   }
 }
 
-function toggle_multi_select(el) {
-  var select = $(el);
-  if (select.multiple == true) {
-    select.multiple = false;
-  } else {
-    select.multiple = true;
-  }
+function toggle_multi_select(field) {
+    select = $('values_' + field);
+    if (select.multiple == true) {
+        select.multiple = false;
+    } else {
+        select.multiple = true;
+
+    }
 }
 
 function submit_query_form(id) {
@@ -133,19 +134,19 @@ Event.observe(document,"dom:loaded", apply_filters_observer);
     <div id="div_values_<%= field %>" style="display:none;">
     <% case options[:type]
     when :list, :list_optional, :list_status, :list_subprojects %>
-        <span class="span_values_<%= field %>">
-        	<%= select_tag "v[#{field}][]", options_for_select(options[:values], query.values_for(field)), :class => "values_#{field}", :id => "values_#{field}_1", :multiple => (query.values_for(field) && query.values_for(field).length > 1) %>
-          <%= link_to_function image_tag('bullet_toggle_plus.png'), "toggle_multi_select('values_#{field}_1');", :style => "vertical-align: bottom;" %>
-        </span>
+        <select <%= "multiple=true" if query.values_for(field) and query.values_for(field).length > 1 %> name="v[<%= field %>][]" id="values_<%= field %>" class="select-small" style="vertical-align: top;">
+        <%= options_for_select options[:values], query.values_for(field) %>        
+        </select>
+        <%= link_to_function image_tag('bullet_toggle_plus.png'), "toggle_multi_select('#{field}');", :style => "vertical-align: bottom;" %>
     <% when :date, :date_past %>
         <span class="span_values_<%= field %>"><%= text_field_tag "v[#{field}][]", query.value_for(field), :size => 10, :class => "values_#{field}", :id => "values_#{field}_1" %> <%= calendar_for "values_#{field}_1" %></span>
         <span class="span_values_<%= field %>"><%= text_field_tag "v[#{field}][]", query.value_for(field, 1), :size => 10, :class => "values_#{field}", :id => "values_#{field}_2" %> <%= calendar_for "values_#{field}_2" %></span>
         <span class="span_values_<%= field %>"><%= text_field_tag "v[#{field}][]", query.value_for(field), :size => 3, :class => "values_#{field}" %> <%= l(:label_day_plural) %></span>
 		<%# VVK start %>
-		    <span class="span_values_<%= field %>"><%= text_field_tag "v[#{field}][]", query.value_for(field), :size => 3, :class => "values_#{field}" %> <%= l(:label_eqo_mw_tip) %></span>
+		    <span class="span_values_<%= field %>"><%= text_field_tag "v[#{field}][]", query.values_for(field), :size => 3, :class => "values_#{field}" %> <%= l(:label_eqo_mw_tip) %></span>
 		<%# VVK end %>
     <% when :string, :text %>
-        <span class="span_values_<%= field %>"><%= text_field_tag "v[#{field}][]", query.value_for(field), :class => "values_#{field}", :id => "values_#{field}", :size => 30 %></span>
+        <span class="span_values_<%= field %>"><%= text_field_tag "v[#{field}][]", query.values_for(field), :class => "values_#{field}", :id => "values_#{field}", :size => 30 %></span>
     <% when :integer, :float %>
         <span class="span_values_<%= field %>"><%= text_field_tag "v[#{field}][]", query.value_for(field), :class => "values_#{field}", :id => "values_#{field}_1", :size => 6 %></span>
         <span class="span_values_<%= field %>"><%= text_field_tag "v[#{field}][]", query.value_for(field, 1), :class => "values_#{field}", :id => "values_#{field}_2", :size => 6 %></span>

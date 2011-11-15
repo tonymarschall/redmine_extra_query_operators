@@ -16,6 +16,10 @@ module ExtraQueryOperators
         end
       end
       
+	  def value_for(field, index=0)
+	    (values_for(field) || [])[index]
+	  end
+
       module ClassMethods
         def operators_with_date_range
           o=operators_without_date_range
