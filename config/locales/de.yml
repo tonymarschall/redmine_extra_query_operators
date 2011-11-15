@@ -1,0 +1,10 @@
+de:
+# query selectors strings
+  label_eqo_before_date: "vor (fix)"
+  label_eqo_after_date: "nach (fix)"
+  label_eqo_between_date: "zwischen"
+  label_eqo_regexp: "entspricht reg. Ausdruck"
+  label_eqo_mw_tip: "vor/nach jetzt"
+  label_eqo_month_offset: "ist Monate"
+  label_eqo_week_offset: "ist Wochen"
+
