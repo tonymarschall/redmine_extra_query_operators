@@ -1,0 +1,10 @@
+zh:
+# query selectors strings
+  label_eqo_before_date: "在指定日期之前"
+  label_eqo_after_date: "在指定日期之后"
+  label_eqo_between_date: "介于"
+  label_eqo_regexp: "匹配正则表达式"
+  label_eqo_mw_tip: "当前日期前后（正数为后，负数为前）"
+  label_eqo_month_offset: "几月内"
+  label_eqo_week_offset: "几周内"
+

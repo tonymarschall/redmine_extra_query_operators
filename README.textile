@@ -1,0 +1,36 @@
+h2. Redmine extra query operators plugin
+
+Plugin adds extra operators to issues query, allowing to select exact dates and offsets from current date. Also this plugin adds ability to use regular expressions in text fields
+
+Following extra operators are available for all date fields (start date, due date, etc):
+
+* *Between*
+ Includes all dates which are between specified two dates
+* *After*
+ Includes all dates which are after specified date
+* *Before*
+ Includes all dates which are before specified date
+* *Is months*
+ Includes all dates which are within given month (you may use negative numbers for past months, for example -1 means previous month, etc)
+* *Is weeks*
+ Includes all dates which are within given week (you may use negative numbers for past weeks, for example -1 means previous week, etc)
+
+Following extra operator is available for all string and text fields:
+
+* *Matches regexp*
+ Searches string using SQL regular expression (ie use @\[.*\]@ in subject filter to find all subjects with square brackets)
+
+Plugin was tested on Redmine v1.2.1 (r6268)
+Plugin patches *views\queries\_filters.rhtml* view. Additions are marked with _VVK start_ and _VVK end_ comments
+
+h3. History
+
+0.0.4
+
+* Compatibility with Redmine 1.2.x
+* Not compatible with Redmine versions prior to 1.2.x
+
+0.0.3
+
+* First public release
+

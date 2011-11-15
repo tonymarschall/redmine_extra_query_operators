@@ -1,0 +1,10 @@
+en:
+# query selectors strings
+  label_eqo_before_date: "before"
+  label_eqo_after_date: "after"
+  label_eqo_between_date: "between"
+  label_eqo_regexp: "matches regexp"
+  label_eqo_mw_tip: "before/after current"
+  label_eqo_month_offset: "is months"
+  label_eqo_week_offset: "is weeks"
+
